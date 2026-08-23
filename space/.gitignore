@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Generated clips and cached weights should never be committed to the Space.
+*.mp4
+*.safetensors
+models/

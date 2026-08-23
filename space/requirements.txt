@@ -1,0 +1,16 @@
+# gradio itself is installed by the Space runtime from `sdk_version` in README.md.
+
+huggingface-hub>=1.0,<2
+
+# ZeroGPU scheduler. Unused (and harmless) on dedicated GPU hardware.
+spaces>=0.51
+
+# LTX-2.5 support landed after the 1.0.0 PyPI release of these packages, so install
+# them from the repository. `ltx-core` pulls torch, transformers, accelerate and av.
+ltx-core @ git+https://github.com/Lightricks/LTX-2.git@main#subdirectory=packages/ltx-core
+ltx-pipelines @ git+https://github.com/Lightricks/LTX-2.git@main#subdirectory=packages/ltx-pipelines
+
+# Not installed here: the `natten` extra, which only accelerates the *diffusion* video
+# VAE. app.py defaults to the convolutional VAE, which needs no extra dependency. To
+# use the diffusion decoder instead, add the pinned wheel from ltx-core's `natten`
+# extra and set LTX_VIDEO_VAE=vae/ltx-2.5-video-vae-bf16.safetensors.
