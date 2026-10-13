@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Compass</title>
+  <meta name="description" content="AI research agents that find the perfect digital product for you to start selling." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◆</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" data-action="home"><span class="brand-mark">◆</span> Product Compass</a>
+    <div class="topbar-right">
+      <span id="demo-badge" class="badge badge-warn" hidden>Demo mode</span>
+      <button class="btn btn-ghost btn-sm" data-action="home" id="restart-btn" hidden>Start over</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <!-- Landing -->
+    <section id="view-landing" class="view active">
+      <div class="hero">
+        <span class="eyebrow">Your AI research team</span>
+        <h1>Find the <em>digital product</em><br />you were meant to sell.</h1>
+        <p class="lead">Five specialised agents interview you, scan live market demand, dig up the problems people already pay to solve, and rank the products that fit <strong>you</strong> best — with scores, pricing and a launch plan.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg" data-action="start">Start my research →</button>
+          <button class="btn btn-ghost btn-lg" id="resume-btn" data-action="resume" hidden>View last report</button>
+        </div>
+        <p class="hint">About 3 minutes of questions · 2–5 minutes of live research</p>
+      </div>
+      <div class="agent-grid" id="landing-agents"></div>
+      <div class="how">
+        <div class="how-step"><span>1</span><h3>Tell us about you</h3><p>Skills, interests, time, budget and goals.</p></div>
+        <div class="how-step"><span>2</span><h3>Agents research live</h3><p>Real web searches on demand, pain points and competitors.</p></div>
+        <div class="how-step"><span>3</span><h3>Get ranked picks</h3><p>Scored ideas with features, pricing and a week-by-week plan.</p></div>
+      </div>
+    </section>
+
+    <!-- Intake wizard -->
+    <section id="view-wizard" class="view">
+      <div class="wizard card">
+        <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
+        <div class="wizard-meta"><span id="step-label"></span><span id="step-section" class="muted"></span></div>
+        <div id="question" class="question"></div>
+        <div class="wizard-nav">
+          <button class="btn btn-ghost" id="back-btn">← Back</button>
+          <div class="spacer"></div>
+          <button class="btn btn-link" id="skip-btn">Skip</button>
+          <button class="btn btn-primary" id="next-btn">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Follow-ups -->
+    <section id="view-followups" class="view">
+      <div class="card wizard">
+        <div class="agent-inline"><span class="agent-avatar">🗣️</span><div><strong>Interviewer</strong><div class="muted">A few tailored follow-ups based on your answers</div></div></div>
+        <div id="followups"></div>
+        <div class="wizard-nav">
+          <button class="btn btn-ghost" id="followups-back">← Back</button>
+          <div class="spacer"></div>
+          <button class="btn btn-primary btn-lg" id="launch-btn">Launch research agents 🚀</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research room -->
+    <section id="view-research" class="view">
+      <div class="section-head">
+        <span class="eyebrow">Live research</span>
+        <h2>Your agents are on it</h2>
+        <p class="muted" id="research-status">Assembling the team…</p>
+      </div>
+      <div class="room" id="room"></div>
+      <div id="research-error" class="card error" hidden></div>
+    </section>
+
+    <!-- Results -->
+    <section id="view-results" class="view">
+      <div id="results"></div>
+    </section>
+  </main>
+
+  <footer class="footer">Recommendations are AI-generated research — validate with real customers before investing heavily.</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "product-compass",
+  "version": "1.0.0",
+  "description": "AI research agents that find the perfect digital product for you to start selling",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkemai/LTX-video.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkemai/LTX-video/issues"
+  },
+  "homepage": "https://github.com/mkemai/LTX-video#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "express": "^5.3.0",
+    "zod": "^4.6.7"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  }
+}
